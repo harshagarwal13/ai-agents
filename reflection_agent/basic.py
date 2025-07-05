@@ -38,7 +38,7 @@ graph.add_edge(REFLECT, GENERATE)
 app = graph.compile()
 
 #pip install grandalf
-print(app.get_graph().draw_mermaid())
-app.get_graph().print_ascii()
+# print(app.get_graph().draw_mermaid())
+# app.get_graph().print_ascii()
 response = app.invoke(HumanMessage(content="How AI is going to impact our tech world"))
 print(response)

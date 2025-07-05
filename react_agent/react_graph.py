@@ -28,7 +28,7 @@ graph.add_edge(ACT_NODE, REASON_NODE)
 app = graph.compile()
 result = app.invoke(
     {
-        "input": "PASS",
+        "input": "Recent news of Pune Maharashtra of todays date?",
         "agent_outcome":None,
         "intermediate_steps": []
     }

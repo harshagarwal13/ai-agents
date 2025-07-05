@@ -26,7 +26,7 @@ graph.add_conditional_edges("revisor", event_loop)
 graph.set_entry_point("draft")
 
 app = graph.compile()
-print(app.get_graph().draw_mermaid())
+# print(app.get_graph().draw_mermaid())
 
 response = app.invoke("Write me about how small businesses can leverage AI to grow")
 print(response[-1].tool_calls[0]["args"]["answer"])

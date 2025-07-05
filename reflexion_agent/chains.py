@@ -1,6 +1,7 @@
 import datetime
 from langchain.prompts import MessagesPlaceholder, ChatPromptTemplate
-from langchain_ollama import ChatOllama
+# from langchain_ollama import ChatOllama
+from langchain_groq import ChatGroq
 from urllib3 import response
 from schema import AnswerQuestion, ReviseAnswer
 import datetime
@@ -34,7 +35,7 @@ actor_prompt_template = ChatPromptTemplate.from_messages(
 
 first_responser_prompt_template = actor_prompt_template.partial(first_instruction = 'Provide a detailed ~250 word answer')
 
-llm = ChatOllama(model = 'qwen3:8b')
+llm = ChatGroq(model = 'llama-3.1-8b-instant')
 first_responder_chain = first_responser_prompt_template | llm.bind_tools([AnswerQuestion], tool_choice = 'AnswerQuestion')
 
 validator = PydanticToolsParser(tools = [AnswerQuestion])

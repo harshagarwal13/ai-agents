@@ -1,5 +1,5 @@
 from langchain_core.prompts import MessagesPlaceholder, ChatPromptTemplate
-from langchain_ollama import ChatOllama
+from langchain_groq import ChatGroq
 
 
 generation_prompt = ChatPromptTemplate.from_messages(
@@ -26,7 +26,7 @@ reflection_prompt = ChatPromptTemplate.from_messages(
 )
 
 # llm = OllamaChatModel(model='gemma3:27b')
-llm = ChatOllama(model = 'qwen3:8b')
+llm = ChatGroq(model = 'llama-3.1-8b-instant')
 
 generation_chain = generation_prompt | llm
 reflection_chain = reflection_prompt | llm
